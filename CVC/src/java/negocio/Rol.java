@@ -3,6 +3,8 @@ package negocio;
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -14,7 +16,8 @@ public class Rol {
     private String nombre;
     private String descripcionRol;
     private Date fechaAlta;
-
+    private Set<Usuario> usuarios = new HashSet<Usuario>();
+    
     public Rol() {
     }
 
@@ -48,5 +51,13 @@ public class Rol {
 
     public void setDescripcionRol(String descripcionRol) {
         this.descripcionRol = descripcionRol;
+    }
+
+    public Set<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(Set<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 }
