@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="negocio.Producto" table="producto" >
+        <id       name="idProducto" column="idProducto">
+            <generator class="identity" />
+        </id>
+
+        
+        <property name="nombreProducto"         column="nombreProducto" />
+        <property name="descripcionProducto"    column="descripcionProducto" />
+        <property name="permiteMostrar"         column="permiteMostrar" />
+        <property name="permiteVender"          column="permiteVender"  />
+        <property name="permiteCambiar"         column="permiteCambiar" />
+        <property name="precioEuros"            column="precioEuros" />
+        <property name="fechaAlta"            column="fecha_alta" type="date" />
+
+        <many-to-one name="categoria">
+            <column name="idCategoria"  />
+        </many-to-one>         
+        
+        <many-to-one name="usuario">
+            <column name="idUsuario"  />
+        </many-to-one>         
+    </class>
+    
+</hibernate-mapping>

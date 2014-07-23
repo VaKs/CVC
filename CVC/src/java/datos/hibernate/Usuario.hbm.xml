@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="negocio.Usuario" table="usuario" >
+        <id       name="idUsuario" column="idUsuario"/>
+        <property name="nombre"   column="nombre"  />
+        <property name="login"   column="login"  />
+        <property name="apellidos"   column="apellidos"  />
+        <property name="telefono"   column="telefono"  />
+        <property name="password"   column="password"  />
+        <property name="correo" column="correo"/>
+        <property name="direccion" column="direccion"/>
+        <property name="pais" column="pais"/>
+        <property name="provincia" column="provincia"/>
+        <property name="ciudad" column="ciudad"/>
+        <property name="fechaAlta" column="fecha_alta" type="date"/>
+   
+        <many-to-one name="rol">
+            <column name="idRol"  />
+        </many-to-one>         
+
+    </class>
+</hibernate-mapping>

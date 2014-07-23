@@ -1,0 +1,20 @@
+  <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="negocio.Categoria" table="categoria" >
+        
+        <id       name="idCategoria" column="idCategoria">
+            <generator class="identity" />
+        </id>
+
+        <property name="nombreCategoria"   column="nombreCategoria"  />
+        <property name="descripcionCategoria" column="descripcionCategoria" /> 
+         <property name="fechaAlta" column="fecha_alta" type="date" />  
+        
+        <set name="productos"  cascade="all" inverse="true"  >
+            <key>
+                <column name="idProducto"  />
+            </key>
+            <one-to-many class="negocio.Producto" />
+        </set> 
+    </class>
+</hibernate-mapping>

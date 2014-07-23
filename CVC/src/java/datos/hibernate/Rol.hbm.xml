@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="negocio.Rol" table="rol" >
+        
+        <id       name="idRol" column="idRol"/>
+        <property name="nombre"   column="nombre"  />
+        <property name="fechaAlta" column="fecha_alta" type="date"/>
+         
+        
+        <set name="usuarios"  cascade="all" inverse="true"  >
+            <key>
+                <column name="idUsuario"  />
+            </key>
+            <one-to-many class="negocio.Usuario" />
+        </set> 
+    </class>
+</hibernate-mapping>
+

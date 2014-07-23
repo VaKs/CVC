@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="negocio.Venta" table="venta" >
+        <id       name="idVenta" column="idVenta"/>
+        <property name="precio"   column="precio"  />
+        <property name="unidades"   column="unidades"  />
+        <property name="fechaVenta"   column="fecha_venta" type="date" />
+        <property name="estado"   column="estado"  />
+   
+        <many-to-one name="comprador">
+            <column name="comprador"  />
+        </many-to-one>  
+        <many-to-one name="vendedor">
+            <column name="vendedor"  />
+        </many-to-one>
+        <many-to-one name="producto">
+            <column name="articulo"  />
+        </many-to-one>      
+
+    </class>
+</hibernate-mapping>
