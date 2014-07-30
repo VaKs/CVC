@@ -10,14 +10,14 @@
     <!--Permite usar entre otras la anotación @Autowired -->
     <context:annotation-config/>
     <!--Permite usar entre otras las anotaciones @Component y @Controller -->
-    <context:component-scan base-package="es.fpmislata.proyecto2.datos" />
+    <context:component-scan base-package="datos" />
  
-<!--    <bean class="es.fpmislata.proyecto2.datos.hibernate.HibernateUtil" factory-method="getSessionFactory" />
-    <bean class="es.fpmislata.proyecto2.datos.UsuarioDAOImplHibernate" />
-    <bean class="es.fpmislata.proyecto2.datos.RolDAOImplHibernate" />
-    <bean class="es.fpmislata.proyecto2.datos.ProductoDAOImplHibernate" />
-    <bean class="es.fpmislata.proyecto2.datos.CategoriaDAOImplHibernate" />
-    <bean class="es.fpmislata.proyecto2.datos.VentaDAOImplHibernate" />
-    <bean class="es.fpmislata.proyecto2.datos.TruequeDAOImplHibernate"/>-->
+    <bean class="datos.hibernate.HibernateUtil" factory-method="getSessionFactory" />
+    <bean class="datos.UsuarioDAOImplHibernate" />
+    <bean class="datos.RolDAOImplHibernate" />
+    <bean class="datos.ProductoDAOImplHibernate" />
+    <bean class="datos.CategoriaDAOImplHibernate" />
+    <bean class="datos.VentaDAOImplHibernate" />
+    <bean class="datos.TruequeDAOImplHibernate"/>
     <bean class="datos.PasswordEncryptorImplBasic"/>
 </beans>

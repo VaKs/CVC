@@ -79,6 +79,10 @@ public class Usuario {
         password = passwordEncryptor.encryptPassword(password);
         this.password = password;
     }
+    
+    public boolean checkPassword(String unEncryptedPassword){
+        return passwordEncryptor.checkPassword(unEncryptedPassword, this.password);
+    }
 
     public Rol getRol() {
         return rol;
